@@ -15,6 +15,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://patent-first-steps-thorncrest.vercel.app/og.png">
+<link rel="canonical" href="https://patent-first-steps-thorncrest.vercel.app/">
 <link rel="manifest" href="manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -143,6 +144,10 @@
   @media (max-width:430px){ h1{font-size:38px} }
   @media print{#bar,.actions,header .blue{display:none} body{background:#fff;font-size:11.5pt} .rev{opacity:1;transform:none}
     .myth .truth{max-height:none !important;margin-top:10px !important} .pitch,header{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+  button.btn{font:inherit;cursor:pointer;-webkit-appearance:none;appearance:none}
+  a:focus-visible,button:focus-visible,li:focus-visible,.myth:focus-visible{outline:3px solid var(--crimson);outline-offset:3px;border-radius:6px}
+  @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}.rev{opacity:1 !important;transform:none !important}}
 </style>
 </head>
 <body>
@@ -165,14 +170,14 @@
 
 <div class="wrap">
 
-  <div class="disc rev"><b>This is education, not legal advice.</b> Every invention is different, so for your situation talk to a registered patent attorney or agent (like the folks on this panel). Fees below are current as of 2026; confirm at <a href="https://www.uspto.gov">uspto.gov</a>.</div>
+  <div class="disc rev"><b>This is education, not legal advice.</b> Reading it does not make anyone your lawyer. Every invention is different, so for your own situation talk to a patent attorney or agent registered to practice before the USPTO. This guide's panel is moderated by <b>Matt Bottomly</b>, a patent partner at <a href="https://www.thorncrestlaw.com/" target="_blank" rel="noopener noreferrer">ThornCrest Law</a> and a former USPTO patent examiner.<sup>21</sup> Fees below were checked against the USPTO's current fee schedule in August 2026; confirm at <a href="https://www.uspto.gov">uspto.gov</a>.</div>
 
   <h2 class="rev">What a patent actually is</h2>
   <p class="rev">A patent is the right to stop other people from making, using, or selling your invention for a set time.<sup>1</sup> Think of it as a right to exclude, a fence around your idea. It does not hand you a product or a profit, and it does not give you the right to build the thing yourself.<sup>1</sup> What it gives you is the legal power to keep copycats out.</p>
   <div class="types rev">
     <div class="type"><b>Utility patent</b><span>How something works or is used. Lasts up to 20 years from filing.<sup>2</sup></span></div>
     <div class="type"><b>Design patent</b><span>How something looks. Lasts 15 years from grant.<sup>1</sup></span></div>
-    <div class="type"><b>Plant patent</b><span>A new, distinct plant reproduced without seeds. 20 years from filing.<sup>2</sup></span></div>
+    <div class="type"><b>Plant patent</b><span>A new, distinct plant reproduced without seeds. 20 years from filing.<sup>2,3</sup></span></div>
   </div>
   <p class="rev"><b>And they are not the same as a trademark or copyright.</b> A patent protects an invention; a trademark protects a name or logo (also at the USPTO); a copyright protects creative work like writing or music (at the U.S. Copyright Office, automatically once it is fixed); a trade secret protects confidential information for as long as you keep it secret.<sup>5,6</sup></p>
 
@@ -214,15 +219,15 @@
 
   <h2 class="rev">Free help — tap to call</h2>
   <div class="callgrid rev">
-    <a class="call" href="tel:18667673848"><div class="l">USPTO Pro Se Center</div><div class="v">1-866-767-3848</div></a>
-    <a class="call" href="tel:8085863477"><div class="l">Hawaiʻi State Library · Patents</div><div class="v">(808) 586-3477</div></a>
+    <a class="call" href="tel:18667673848"><div class="l">USPTO Pro Se Center<sup>13</sup></div><div class="v">1-866-767-3848</div></a>
+    <a class="call" href="tel:8085863477"><div class="l">Hawaiʻi State Library · Patents<sup>16</sup></div><div class="v">(808) 586-3477</div></a>
   </div>
-  <p class="rev">If money is tight, the <b>Patent Pro Bono Program</b> offers free volunteer attorneys for those who qualify; Hawaiʻi inventors are served through the California Inventors Assistance Program.<sup>13,14</sup></p>
+  <p class="rev">If money is tight, the <b>Patent Pro Bono Program</b> offers free volunteer attorneys for those who qualify; Hawaiʻi inventors are served through the California Inventors Assistance Program.<sup>14,22</sup></p>
 
   <h2 class="rev">Hawaiʻi resource box</h2>
   <div class="box2 rev">
     <ul style="margin:0;padding-left:18px">
-      <li><b>Hawaiʻi State Library — Patent &amp; Trademark Resource Center</b> (downtown Honolulu): free search help. The only such center in the Pacific.<sup>16</sup></li>
+      <li><b>Hawaiʻi State Library — Patent &amp; Trademark Resource Center</b> (downtown Honolulu): free search help from trained staff, by walk-in or on (808) 586-3477. A USPTO-designated resource center since 1989.<sup>16</sup></li>
       <li><b>USPTO for kids, students &amp; educators:</b> free lessons and resources.<sup>18</sup></li>
       <li><b>Made it using University of Hawaiʻi resources?</b> Talk to UH's Office of Innovation and Commercialization first.<sup>17</sup></li>
       <li><b>Young makers:</b> Camp Invention, a K–6 STEM program, runs in Hawaiʻi.<sup>19</sup></li>
@@ -230,11 +235,12 @@
   </div>
 
   <h2 class="rev">A little local inspiration</h2>
-  <p class="rev">You don't have to leave these islands to invent something the world uses. Three Hawaiʻi inventors on today's panel prove it, with work spanning semiconductors, crowdfunding, and email security.<sup>20</sup> Ask them how they started. Everyone starts somewhere.</p>
+  <p class="rev">You don't have to leave these islands to invent something the world uses. The three Hawaiʻi inventors on this panel prove it: John Ogawa Borland in semiconductors, Olin Kealoha Lagon — who patented the world's first online crowdfunding service — and Hoala Greevy, founder of the HIPAA-compliant email company Paubox.<sup>21</sup> Ask them how they started. Everyone starts somewhere.</p>
+  <p class="lead rev"><b>Patent Your Invention &amp; Innovation Archipelago</b> · Tuesday, September 1, 2026, 6:00–7:30 pm · Inspiration Hawaii Museum, 900 Richards St, Honolulu.<sup>20,21</sup></p>
 
   <div class="actions rev">
-    <a class="btn solid" href="#" onclick="window.print();return false;">Download PDF</a>
-    <a class="btn" href="#" id="share">Share</a>
+    <button class="btn solid" type="button" id="printpdf">Download PDF</button>
+    <button class="btn" type="button" id="share">Share</button>
   </div>
 
   <div class="install rev">
@@ -257,7 +263,7 @@
   </div>
 
   <h2 class="rev">Resources</h2>
-  <p class="lead rev">Every fact on this page is sourced. Tap any title to open the original in a new tab. Figures verified July 2026; confirm current fees at uspto.gov.</p>
+  <p class="lead rev">Every fact on this page is sourced. Tap any title to open the original in a new tab. Every link and fee figure was re-checked on 29 August 2026 against the USPTO fee schedule then in force; confirm current fees at uspto.gov.</p>
   <ol class="refs rev">
     <li id="r1"><a href="https://www.uspto.gov/patents/basics/essentials" target="_blank" rel="noopener noreferrer">USPTO — Patent essentials</a> <span class="src">Official · USPTO</span><span class="ann">The government's plain-language overview of what a patent is. Source for “a patent is a right to exclude,” the design-patent 15-year term, and the point that a working model is rarely required.</span></li>
     <li id="r2"><a href="https://www.uspto.gov/web/offices/pac/mpep/s2701.html" target="_blank" rel="noopener noreferrer">USPTO — MPEP §2701, Patent Term</a> <span class="src">Primary · USPTO rulebook</span><span class="ann">The rulebook section on how long patents last. Confirms utility and plant patents run 20 years from the filing date.</span></li>
@@ -278,10 +284,12 @@
     <li id="r17"><a href="https://research.hawaii.edu/oic/" target="_blank" rel="noopener noreferrer">University of Hawaiʻi — Office of Innovation and Commercialization</a> <span class="src">University · UH</span><span class="ann">The current UH tech-transfer office. Included because inventions made using UH resources may be subject to UH's IP rules.</span></li>
     <li id="r18"><a href="https://www.uspto.gov/learning-and-resources/kids-educators" target="_blank" rel="noopener noreferrer">USPTO — Kids, students, and educators</a> <span class="src">Official · USPTO</span><span class="ann">The USPTO's free youth learning hub. Linked as a next step for young inventors and their teachers.</span></li>
     <li id="r19"><a href="https://www.invent.org/programs/camp-invention" target="_blank" rel="noopener noreferrer">National Inventors Hall of Fame — Camp Invention</a> <span class="src">Nonprofit · NIHF</span><span class="ann">A K–6 summer STEM program that runs in Hawaiʻi. Included as a hands-on option for younger keiki.</span></li>
-    <li id="r20"><a href="https://inspirationhawaiimuseum.org/" target="_blank" rel="noopener noreferrer">Inspiration Hawaii Museum</a> <span class="src">Host org</span><span class="ann">The host of this panel. Referenced for the local-inventor inspiration and the event itself.</span></li>
+    <li id="r20"><a href="https://inspirationhawaiimuseum.org/" target="_blank" rel="noopener noreferrer">Inspiration Hawaii Museum</a> <span class="src">Host org</span><span class="ann">The venue, at 900 Richards Street in downtown Honolulu, and the source for the date and time of the panel. The museum is not open to the public day to day; it opens for events like this one.</span></li>
+    <li id="r21"><a href="https://luma.com/rw640sa8" target="_blank" rel="noopener noreferrer">Patent Your Invention &amp; Innovation Archipelago — event listing</a> <span class="src">Event · Hawaiʻi Tech Week</span><span class="ann">The panel's own listing. Source for the three inventors and what each of them patented, and for the moderator: Matt Bottomly, a patent partner at ThornCrest Law and a former patent examiner at the USPTO.</span></li>
+    <li id="r22"><a href="https://www.uspto.gov/about-us/uspto-office-locations/hawaii" target="_blank" rel="noopener noreferrer">USPTO — Resources for Hawaii inventors</a> <span class="src">Official · USPTO</span><span class="ann">The USPTO's own Hawaiʻi page. States directly that Hawaiʻi inventors are served by the California Inventors Assistance Program, which is the basis for the pro bono line above.</span></li>
   </ol>
 
-  <footer>A free educational take-home for Hawaiʻi Tech Week 2026, with ThornCrest Law, reviewed for accuracy by the session moderator before distribution. Not legal advice.</footer>
+  <footer>A free educational take-home for Hawaiʻi Tech Week 2026 (August 31 – September 6, 2026), produced for the <a href="https://luma.com/rw640sa8" target="_blank" rel="noopener noreferrer">Patent Your Invention</a> panel with <a href="https://www.thorncrestlaw.com/" target="_blank" rel="noopener noreferrer">ThornCrest Law</a>. General information about the U.S. patent system, not legal advice, and not a substitute for advice about your own invention.</footer>
 </div>
 
 <script>
@@ -295,6 +303,21 @@
   items.forEach(function(li){li.addEventListener('click',function(){li.classList.toggle('on');var n=document.querySelectorAll('ul.checks li.on').length;fill.style.width=(n/items.length*100)+'%';msg.textContent=lines[n];msg.classList.toggle('done',n===items.length);});});
   document.getElementById('share').addEventListener('click',function(ev){ev.preventDefault();if(navigator.share){navigator.share({title:'So You Have an Invention — First Steps',url:location.href});}else{navigator.clipboard.writeText(location.href);this.textContent='Link copied ✓';}});
   (function(){var ua=navigator.userAgent||'';var isIOS=/iPad|iPhone|iPod/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);var isAnd=/Android/.test(ua);if(isIOS){document.getElementById('os-ios').classList.add('hi');}else if(isAnd){document.getElementById('os-and').classList.add('hi');}})();
+
+  (function(){
+    var pb=document.getElementById('printpdf');
+    if(pb){pb.addEventListener('click',function(){window.print();});}
+    document.querySelectorAll('ul.checks li').forEach(function(li){
+      li.setAttribute('tabindex','0'); li.setAttribute('role','checkbox'); li.setAttribute('aria-checked','false');
+      li.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();li.click();}});
+      li.addEventListener('click',function(){li.setAttribute('aria-checked',li.classList.contains('on')?'true':'false');});
+    });
+    document.querySelectorAll('.myth').forEach(function(m){
+      m.setAttribute('tabindex','0'); m.setAttribute('role','button'); m.setAttribute('aria-expanded','false');
+      m.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();m.click();}});
+      m.addEventListener('click',function(){m.setAttribute('aria-expanded',m.classList.contains('open')?'true':'false');});
+    });
+  })();
 </script>
 </body>
 </html>
