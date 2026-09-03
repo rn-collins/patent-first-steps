@@ -25,13 +25,19 @@
 <link rel="icon" type="image/png" href="icon-tc-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400..800;1,400&family=Nunito+Sans:wght@400..800&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#0e375d; --navy-deep:#0a2b49; --crimson:#b82a53; --crimson-deep:#98213f;
     --ink:#26262b; --soft:#5b5b62; --bg:#f7f6f2; --card:#ffffff; --line:#e6e2da; --cream:#f4f0e8; --ok:#0a7a4b;
-    --display:"Cormorant Garamond",Georgia,serif;
-    --body:"Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    /* Cormorant Garamond was on eleven builds in this estate, and it is the
+       wrong register besides: a delicate high-contrast Garamond set at 46px
+       for a plain-English handout given to young inventors at a tech week,
+       read on a phone. Aleo is a sturdy slab that holds up small and dark on
+       a screen, and Nunito Sans was drawn for exactly this reading size.
+       Neither is used anywhere else in the estate. */
+    --display:"Aleo",Georgia,serif;
+    --body:"Nunito Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
   }
   *{box-sizing:border-box}
@@ -49,7 +55,7 @@
   .brandline svg{width:26px;height:30px}
   .brandline b{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:.01em}
   .brandline span{color:#9fb6cf;font-size:13px}
-  .kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#c98aa0;font-weight:700;margin:0 0 12px}
+  .kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#cd8ea4;font-weight:700;margin:0 0 12px}
   h1{font-family:var(--display);font-weight:700;font-size:46px;line-height:1.05;letter-spacing:.005em;margin:0 0 14px}
   .sub{font-size:18px;color:#cdd8e4;max-width:40ch;margin:0}
   .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
@@ -67,6 +73,9 @@
   p{margin:12px 0}
   sup{color:var(--crimson);font-weight:700;font-size:.72em}
   b{color:var(--ink);font-weight:600}
+  /* the global b rule above outranks the header's inherited light ink, so
+     <b>ThornCrest Law</b> rendered near-black on the navy masthead at 1.04:1 */
+  header b,header strong{color:inherit}
   a{color:var(--crimson-deep)}
 
   .types{display:grid;gap:10px;margin:16px 0}
@@ -97,6 +106,7 @@
   ul.checks li{display:flex;gap:13px;align-items:flex-start;padding:13px 2px;border-bottom:1px solid var(--line);font-size:15.5px;cursor:pointer;user-select:none}
   ul.checks li:last-child{border-bottom:0}
   .box{width:24px;height:24px;border:2px solid var(--navy);border-radius:6px;flex:0 0 auto;margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff;transition:.2s}
+  li.on .box::after{content:"✓"}
   li.on .box{background:var(--navy)}
   li.on span.tx{color:var(--soft);text-decoration:line-through}
 
@@ -148,9 +158,40 @@
   button.btn{font:inherit;cursor:pointer;-webkit-appearance:none;appearance:none}
   a:focus-visible,button:focus-visible,li:focus-visible,.myth:focus-visible{outline:3px solid var(--crimson);outline-offset:3px;border-radius:6px}
   @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}.rev{opacity:1 !important;transform:none !important}}
+
+  /* ── SKIP LINK, SR-ONLY, FORCED COLOURS ──
+     The build already had focus rings, a print stylesheet and a reduced-motion
+     rule, and its checklist and myth cards already carry role, tabindex and
+     keyboard handlers. What was missing: a way past the masthead, a
+     screen-reader-only class, and anything for Windows high contrast, where a
+     page built out of tinted cards and hairline borders collapses flat. ── */
+  .skip{position:absolute;left:12px;top:-90px;z-index:200;background:var(--crimson);color:#fff;
+    font-family:var(--body);font-weight:700;font-size:15px;padding:12px 18px;border-radius:0 0 6px 6px;
+    text-decoration:none;transition:top .15s ease}
+  .skip:focus{top:0}
+  .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;
+    margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;
+    white-space:nowrap!important;border:0!important}
+  @media (prefers-reduced-motion:reduce){.skip{transition:none}}
+
+  @media (forced-colors:active){
+    header,.pitch{background:Canvas!important;color:CanvasText!important;forced-color-adjust:none}
+    header .blue,#bar{display:none}
+    .type,.g,.myth,.call,.box2,.install,.install .os,.disc,.prog,ul.checks li{
+      border:1px solid CanvasText;background:Canvas;color:CanvasText}
+    .btn{border:1px solid ButtonText;color:ButtonText;background:ButtonFace}
+    .btn.solid{background:Highlight;color:HighlightText;border-color:Highlight;forced-color-adjust:none}
+    .g:before,.prog i{background:CanvasText;color:Canvas;forced-color-adjust:none}
+    .box{border-color:CanvasText}
+    li.on .box{background:Highlight;color:HighlightText;forced-color-adjust:none}
+    a{color:LinkText}
+    a:focus-visible,button:focus-visible,li:focus-visible,.myth:focus-visible{outline:3px solid Highlight}
+    .tag{border:1px solid CanvasText;color:CanvasText;background:Canvas}
+  }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to the guide</a>
 <div id="bar"></div>
 
 <header>
@@ -168,7 +209,7 @@
   </div>
 </header>
 
-<div class="wrap">
+<main class="wrap" id="main">
 
   <div class="disc rev"><b>This is education, not legal advice.</b> Reading it does not make anyone your lawyer. Every invention is different, so for your own situation talk to a patent attorney or agent registered to practice before the USPTO. This guide's panel is moderated by <b>Matt Bottomly</b>, a patent partner at <a href="https://www.thorncrestlaw.com/" target="_blank" rel="noopener noreferrer">ThornCrest Law</a> and a former USPTO patent examiner.<sup>21</sup> Fees below were checked against the USPTO's current fee schedule in August 2026; confirm at <a href="https://www.uspto.gov">uspto.gov</a>.</div>
 
@@ -194,12 +235,12 @@
     <div class="prog"><i id="pfill"></i></div>
     <p class="pmsg" id="pmsg">Tap each step as you go.</p>
     <ul class="checks">
-      <li><span class="box">✓</span><span class="tx"><b>Write it down.</b> Date it, sketch it, describe how it works.<sup>15</sup></span></li>
-      <li><span class="box">✓</span><span class="tx"><b>Zip your lips before you file.</b> The U.S. gives a one-year grace period after your own disclosure, but most countries give none, so file before you show.<sup>7</sup></span></li>
-      <li><span class="box">✓</span><span class="tx"><b>Search first (free).</b> USPTO Patent Public Search and Google Patents.<sup>8</sup></span></li>
-      <li><span class="box">✓</span><span class="tx"><b>Consider a provisional.</b> Locks an early date and “patent pending” for 12 months. It is never examined and is not a patent by itself.<sup>9</sup></span></li>
-      <li><span class="box">✓</span><span class="tx"><b>Claim your discount.</b> Most students qualify as a micro entity, about 80% off. A provisional is $65 at that rate.<sup>10,11,12</sup></span></li>
-      <li><span class="box">✓</span><span class="tx"><b>Calendar the 12-month deadline</b> to file the full application. This is where an attorney or agent earns their keep.<sup>9</sup></span></li>
+      <li><span class="box" aria-hidden="true"></span><span class="tx"><b>Write it down.</b> Date it, sketch it, describe how it works.<sup>15</sup></span></li>
+      <li><span class="box" aria-hidden="true"></span><span class="tx"><b>Zip your lips before you file.</b> The U.S. gives a one-year grace period after your own disclosure, but most countries give none, so file before you show.<sup>7</sup></span></li>
+      <li><span class="box" aria-hidden="true"></span><span class="tx"><b>Search first (free).</b> USPTO Patent Public Search and Google Patents.<sup>8</sup></span></li>
+      <li><span class="box" aria-hidden="true"></span><span class="tx"><b>Consider a provisional.</b> Locks an early date and “patent pending” for 12 months. It is never examined and is not a patent by itself.<sup>9</sup></span></li>
+      <li><span class="box" aria-hidden="true"></span><span class="tx"><b>Claim your discount.</b> Most students qualify as a micro entity, about 80% off. A provisional is $65 at that rate.<sup>10,11,12</sup></span></li>
+      <li><span class="box" aria-hidden="true"></span><span class="tx"><b>Calendar the 12-month deadline</b> to file the full application. This is where an attorney or agent earns their keep.<sup>9</sup></span></li>
     </ul>
   </div>
 
@@ -290,7 +331,7 @@
   </ol>
 
   <footer>A free educational take-home for Hawaiʻi Tech Week 2026 (August 31 – September 6, 2026), produced for the <a href="https://luma.com/rw640sa8" target="_blank" rel="noopener noreferrer">Patent Your Invention</a> panel with <a href="https://www.thorncrestlaw.com/" target="_blank" rel="noopener noreferrer">ThornCrest Law</a>. General information about the U.S. patent system, not legal advice, and not a substitute for advice about your own invention.</footer>
-</div>
+</main>
 
 <script>
   var bar=document.getElementById('bar');
