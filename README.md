@@ -1,4 +1,4 @@
-# So You Have an Invention — First Steps
+# So You Have an Invention: First Steps
 
 A plain-English first-steps guide to patents for young inventors and their families, by RN Collins, made for Hawaiʻi Tech Week 2026.
 
